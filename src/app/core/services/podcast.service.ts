@@ -1,11 +1,18 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable, tap } from 'rxjs';
+import { ItunesResponse } from '../interfaces/podcast.interface';
+import { environment } from '../../../environments/environment';
+
+const baseUrl = environment.baseUrl;
 
 @Injectable({ providedIn: 'root' })
 export class PodcastService {
-  id = '';
+  private http = inject(HttpClient);
 
-  urlTopPodcasts = 'https://itunes.apple.com/us/rss/toppodcasts/limit=100';
-  urlSearchPodcasts = `https://itunes.apple.com/lookup?id=${this.id}&media=podcast&entity=podcastEpisode&limit=20`;
-
-  constructor() {}
+  getTopPodcasts(): Observable<ItunesResponse> {
+    return this.http.get<ItunesResponse>(
+      `${baseUrl}/us/rss/toppodcasts/limit=100/json`
+    );
+  }
 }

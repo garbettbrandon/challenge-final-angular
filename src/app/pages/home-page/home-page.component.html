@@ -1,3 +1,8 @@
 <div class="home-page">
-  <podcast-card></podcast-card>
+  @for (podcast of podcastResource.value()?.feed?.entry; track $index) {
+
+  <podcast-card [podcast]="podcast"></podcast-card>
+  }@empty {
+  <p>No hay podcasts</p>
+  }
 </div>
