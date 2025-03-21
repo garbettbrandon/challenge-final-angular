@@ -23,7 +23,7 @@ export class PodcastPageComponent {
     loader: ({ request }) => this.podcastService.getPodcastById(request.id),
   });
 
-  tableResource = rxResource({
+  episodeResource = rxResource({
     request: () => ({ id: this.podcastId }),
     loader: ({ request }) => {
       if (!request.id) return of([]);

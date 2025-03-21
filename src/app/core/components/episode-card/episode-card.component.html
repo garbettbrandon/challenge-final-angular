@@ -1,0 +1,14 @@
+<div class="container">
+  <img [src]="episode().artworkUrl160" alt="podcast image" />
+  <div class="podcast_title">
+    <h3>{{ episode().collectionName }}</h3>
+    <!-- <span>By: {{ episode().trackName }}</span> -->
+  </div>
+  <div class="episode_title">
+    <h3>{{ episode().trackName }}</h3>
+  </div>
+  <section>
+    Description:
+    <p>{{ episode().shortDescription }}</p>
+  </section>
+</div>

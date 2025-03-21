@@ -11,6 +11,7 @@ import { SlicePipe } from '@angular/common';
 })
 export class PodcastCardComponent {
   podcast = input.required<Entry>();
+  
   getPodcastName() {
     return this.podcast()['im:name'];
   }

@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { Entry, ItunesResponse } from '../interfaces/podcast.interface';
 import { environment } from '../../../environments/environment';
-import { EspisodesResponse } from '../interfaces/episodes.interface';
+import { Episode, EspisodesResponse } from '../interfaces/episodes.interface';
 
 const baseUrl = environment.baseUrl;
 
@@ -67,6 +67,34 @@ export class PodcastService {
           if (!episodes.length) {
             throw new Error(`Episodes for podcast with ID ${id} not found`);
           }
+        })
+      );
+  }
+
+  getEpisodeByPodcastAndEpisodeId(
+    podcastId: string,
+    episodeId: string
+  ): Observable<Episode> {
+    return this.http
+      .get<EspisodesResponse>(`${baseUrl}/lookup`, {
+        params: {
+          id: podcastId,
+          media: 'podcast',
+          entity: 'podcastEpisode',
+          limit: '20',
+        },
+      })
+      .pipe(
+        map(({ results }) => {
+          const episode = results.find(
+            (ep) => ep.trackId === parseInt(episodeId, 10)
+          );
+          if (!episode) {
+            throw new Error(
+              `Episode with ID ${episodeId} not found in podcast ${podcastId}`
+            );
+          }
+          return episode;
         })
       );
   }
