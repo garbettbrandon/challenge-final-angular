@@ -1,59 +1,55 @@
 # ChallengeFinalAngular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+Este proyecto es una aplicación Angular que consume la API de iTunes para mostrar podcasts y episodios. Fue generado utilizando [Angular CLI](https://github.com/angular/angular-cli) versión 19.1.6.
 
-## Development server
+## Características
 
-To start a local development server, run:
+- Listado de los podcasts más populares.
+- Búsqueda de podcasts por nombre.
+- Visualización de detalles de un podcast, incluyendo episodios.
+- Reproducción de episodios de podcast.
+- Diseño responsivo.
+
+## Requisitos previos
+
+- Node.js (versión 16 o superior).
+- Angular CLI instalado globalmente: `npm install -g @angular/cli`.
+
+## Servidor de desarrollo
+
+Para iniciar un servidor de desarrollo local, ejecuta:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abre tu navegador y navega a `http://localhost:4200/`. La aplicación se recargará automáticamente al modificar los archivos fuente.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estructura del proyecto
 
-```bash
-ng generate component component-name
+```plaintext
+src/
+├── app/
+│   ├── core/                # Componentes y servicios principales
+│   ├── pages/               # Páginas principales de la aplicación
+│   ├── shared/              # Componentes compartidos
+├── environments/            # Configuraciones de entorno
+├── styles.css               # Estilos globales
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## API utilizada
 
-```bash
-ng generate --help
+Este proyecto utiliza la API de iTunes para obtener información sobre podcasts y episodios. La URL base de la API es:
+
+```
+https://itunes.apple.com
 ```
 
-## Building
+## Recursos adicionales
 
-To build the project run:
+Para más información sobre Angular CLI, incluyendo referencias detalladas de comandos, visita la [documentación oficial de Angular CLI](https://angular.dev/tools/cli).
 
-```bash
-ng build
-```
+## Licencia
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto está bajo la licencia MIT.
