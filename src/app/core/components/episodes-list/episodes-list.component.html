@@ -1,0 +1,26 @@
+<section class="main">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (episode of episodes(); track $index) {
+      <tr>
+        <td>
+          <a
+            [routerLink]="['/podcast', podcastId, 'episode', episode.trackId]"
+            class="link-primary cursor-pointer"
+            >{{ episode.trackName }}</a
+          >
+        </td>
+        <td>{{ episode.releaseDate }}</td>
+        <td>{{ episode.trackTimeMillis }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</section>

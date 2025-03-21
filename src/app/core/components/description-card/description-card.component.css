@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.container img {
+  margin: auto;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.title {
+  margin-top: 20px;
+  border-top: 3px solid rgb(197, 197, 197);
+  border-bottom: 3px solid rgb(197, 197, 197);
+  padding-bottom: 20px;
+}
+
+.container h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 0%;
+}
+
+.container span {
+  margin-top: 0%;
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.container section {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.container section p {
+  font-style: italic;
+  font-weight: normal;
+  color: gray;
+}

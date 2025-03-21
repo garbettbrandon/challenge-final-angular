@@ -1,1 +1,10 @@
-<p>podcast-page works!</p>,
+<div class="parent">
+  <description-card
+    class="podcast__card"
+    [podcast]="podcastPageResource.value()!"
+  ></description-card>
+  <div class="counter__card">Episodes: {{ tableResource.value()?.length }}</div>
+  <div class="episodes__card">
+    <episodes-list [episodes]="tableResource.value() ?? []"></episodes-list>
+  </div>
+</div>

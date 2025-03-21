@@ -1,16 +1,15 @@
 import { Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Entry } from '../../interfaces/podcast.interface';
-import { SlicePipe } from '@angular/common';
 
 @Component({
-  selector: 'podcast-card',
-  imports: [RouterLink],
-  templateUrl: './podcast-card.component.html',
-  styleUrl: './podcast-card.component.css',
+  selector: 'description-card',
+  imports: [],
+  templateUrl: './description-card.component.html',
+  styleUrl: './description-card.component.css',
 })
-export class PodcastCardComponent {
+export class DescriptionCardComponent {
   podcast = input.required<Entry>();
+
   getPodcastName() {
     return this.podcast()['im:name'];
   }
@@ -20,7 +19,10 @@ export class PodcastCardComponent {
   getPodcastImage() {
     return this.podcast()['im:image'];
   }
-    getPodcastId() {
+  getPodcastId() {
     return this.podcast()['id'].attributes['im:id'];
+  }
+  getDesc() {
+    return this.podcast()['summary'];
   }
 }

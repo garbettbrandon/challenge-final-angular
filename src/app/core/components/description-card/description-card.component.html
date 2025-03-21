@@ -1,0 +1,13 @@
+<div class="container">
+  <img [src]="getPodcastImage()[2].label" alt="podcast image" />
+  <div class="title">
+    <h3>{{ getPodcastName().label }}</h3>
+    <span>By: {{ getPodcastArtist().label }}</span>
+  </div>
+  <section>
+    Description:
+    <p>
+      {{ getDesc().label }}
+    </p>
+  </section>
+</div>
