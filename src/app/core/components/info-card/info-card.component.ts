@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Episode } from '../../interfaces/episodes.interface';
 
 @Component({
   selector: 'info-card',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './info-card.component.html',
   styleUrl: './info-card.component.css',
 })
-export class InfoCardComponent {}
+export class InfoCardComponent {
+  episode = input.required<Episode>();
+}
