@@ -1,4 +1,24 @@
-<input class="search" type="text" placeholder="Filter podcast..." />
+<input
+  class="search"
+  type="text"
+  placeholder="Filter podcast..."
+  (keyup.enter)="query.set(txtSearch.value)"
+  #txtSearch
+/>
+
+@if (searchResource.value()?.length !== 0) {
+<p class="counter">
+  {{ searchResource.value()?.length }}
+</p>
+
+<div class="cards">
+  @for (podcast of searchResource.value(); track $index) {
+  <podcast-card [podcast]="podcast"></podcast-card>
+  }@empty {
+  <p>No hay podcasts</p>
+  }
+</div>
+}@else {
 <p class="counter">
   {{ podcastResource.value()?.feed?.entry?.length }}
 </p>
@@ -10,3 +30,4 @@
   <p>No hay podcasts</p>
   }
 </div>
+}
