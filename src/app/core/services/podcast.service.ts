@@ -11,8 +11,10 @@ export class PodcastService {
   private http = inject(HttpClient);
 
   getTopPodcasts(): Observable<ItunesResponse> {
-    return this.http.get<ItunesResponse>(
-      `${baseUrl}/us/rss/toppodcasts/limit=100/json`
-    );
+    return this.http
+      .get<ItunesResponse>(
+        `${baseUrl}/us/rss/toppodcasts/limit=100/genre=1310/json`
+      )
+      .pipe(tap(console.log));
   }
 }

@@ -23,7 +23,7 @@ export interface Icon {
 }
 
 export interface Entry {
-  name: Icon;
+  'im:name': Icon;
   'im:image': IMImage[];
   summary: Icon;
   'im:price': IMPrice;

@@ -1,6 +1,10 @@
-<div class="home-page">
-  @for (podcast of podcastResource.value()?.feed?.entry; track $index) {
+<input class="search" type="text" placeholder="Filter podcast..." />
+<p class="counter">
+  {{ podcastResource.value()?.feed?.entry?.length }}
+</p>
 
+<div class="cards">
+  @for (podcast of podcastResource.value()?.feed?.entry; track $index) {
   <podcast-card [podcast]="podcast"></podcast-card>
   }@empty {
   <p>No hay podcasts</p>

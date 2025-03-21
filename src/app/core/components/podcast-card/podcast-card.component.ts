@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Entry } from '../../interfaces/podcast.interface';
+import { SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'podcast-card',
@@ -10,4 +11,13 @@ import { Entry } from '../../interfaces/podcast.interface';
 })
 export class PodcastCardComponent {
   podcast = input.required<Entry>();
+  getPodcastName() {
+    return this.podcast()['im:name'];
+  }
+  getPodcastArtist() {
+    return this.podcast()['im:artist'];
+  }
+  getPodcastImage() {
+    return this.podcast()['im:image'];
+  }
 }
